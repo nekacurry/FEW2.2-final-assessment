@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap");
+:root {
+  --background: linear-gradient(90deg, #422142 0%, #2c1b2d 48%, #171519 100%);
+  --color-foreground: #e1d0eb;
+  --color-dark: #1b0d1b;
+  --color-md-light: #D8D8F6;
+  --color-light: #EEEEFB;
+  --color-md-dark: #422142;
+  --color-primary: #B18FCF;
+  --color-info: #5290a7;
+  --color-success: #89CE94;
+  --color-danger: #E05269;
+  --color-callout: #FFE1A8;
+  --color-lightest: #fff;
+  --font-base-size: 18px;
+  --shadow: 4px 4px;
+  --shadow-hover: 8px 8px;
+  --shadow-color: #1b0d1b48;
+}
+
+body {
+  font-size: var(--font-base-size);
+  font-family: "Open Sans";
+  background: var(--background);
+  margin: 0;
+  color: var(--color-dark);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-md-dark);
+  font-family: "Montserrat";
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-info);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+/* Buttons */
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  margin: 0;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--color-md-dark);
+  color: var(--color-light);
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-foreground);
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.25rem;
+}
+
+/* Special Inputs */
+.c-input, .r-input {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.c-input input, .r-input input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.check, .r-check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+}
+
+.r-check {
+  border-radius: 50%;
+}
+
+.c-input:hover input ~ .check, .r-input:hover input ~ .r-check {
+  background-color: var(--color-light);
+}
+
+.c-input input:checked ~ .check, .r-input input:checked ~ .r-check {
+  background-color: var(--color-md-dark);
+}
+
+.check:after, .r-check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.c-input input:checked ~ .check:after, .r-input input:checked ~ .r-check:after {
+  display: block;
+}
+
+.c-input .check:after, .r-input .r-check:after {
+  left: 9px;
+}
+
+.c-input .check:after {
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.r-input .r-check:after {
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Navbar */
+#nav {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  margin: 0;
+  border: 1px solid var(--color-light);
+  border-top: 0;
+}
+
+#nav > * {
+  display: flex;
+  list-style: none;
+  align-items: baseline;
+  padding: 0;
+  margin: 0;
+}
+
+#nav a:nth-child(1) {
+  margin: 0;
+  font-size: 2em;
+  color: var(--color-md-dark);
+}
+
+#nav a {
+  margin: 0 0 0 0.5rem;
+  color: var(--color-light);
+}
+
+#nav a:hover {
+  color: var(--color-md-light);
+}
+
+/* Cards */
+.card {
+  box-shadow: var(--shadow) var(--shadow-color);
+  transition: 0.3s;
+  width: 400px;
+  padding: 20px;
+  margin: 20px;
+  background-color: var(--color-light);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover) var(--shadow-color);
+}
+
+.card img {
+  object-fit: cover;
+  width: 400px;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10% 10% 10%;
+}
+
+.container section {
+  background-color: var(--color-foreground);
+  padding: 30px;
+  margin: 10px;
+}
+
+#popular {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.swatches {
+  --color-sample-0: hsl(0, 100%, 50%);
+  --color-sample-1: hsl(3.6, 100%, 50%);
+  --color-sample-2: hsl(7.2, 100%, 50%);
+  --color-sample-3: hsl(10.8, 100%, 50%);
+  --color-sample-4: hsl(14.4, 100%, 50%);
+  --color-sample-5: hsl(18, 100%, 50%);
+  --color-sample-6: hsl(21.6, 100%, 50%);
+  --color-sample-7: hsl(25.2, 100%, 50%);
+  --color-sample-8: hsl(28.8, 100%, 50%);
+  --color-sample-9: hsl(32.4, 100%, 50%);
+  --color-sample-10: hsl(36, 100%, 50%);
+  --color-sample-11: hsl(39.6, 100%, 50%);
+  --color-sample-12: hsl(43.2, 100%, 50%);
+  --color-sample-13: hsl(46.8, 100%, 50%);
+  --color-sample-14: hsl(50.4, 100%, 50%);
+  --color-sample-15: hsl(54, 100%, 50%);
+  --color-sample-16: hsl(57.6, 100%, 50%);
+  --color-sample-17: hsl(61.2, 100%, 50%);
+  --color-sample-18: hsl(64.8, 100%, 50%);
+  --color-sample-19: hsl(68.4, 100%, 50%);
+  --color-sample-20: hsl(72, 100%, 50%);
+  --color-sample-21: hsl(75.6, 100%, 50%);
+  --color-sample-22: hsl(79.2, 100%, 50%);
+  --color-sample-23: hsl(82.8, 100%, 50%);
+  --color-sample-24: hsl(86.4, 100%, 50%);
+  --color-sample-25: hsl(90, 100%, 50%);
+  --color-sample-26: hsl(93.6, 100%, 50%);
+  --color-sample-27: hsl(97.2, 100%, 50%);
+  --color-sample-28: hsl(100.8, 100%, 50%);
+  --color-sample-29: hsl(104.4, 100%, 50%);
+  --color-sample-30: hsl(108, 100%, 50%);
+  --color-sample-31: hsl(111.6, 100%, 50%);
+  --color-sample-32: hsl(115.2, 100%, 50%);
+  --color-sample-33: hsl(118.8, 100%, 50%);
+  --color-sample-34: hsl(122.4, 100%, 50%);
+  --color-sample-35: hsl(126, 100%, 50%);
+  --color-sample-36: hsl(129.6, 100%, 50%);
+  --color-sample-37: hsl(133.2, 100%, 50%);
+  --color-sample-38: hsl(136.8, 100%, 50%);
+  --color-sample-39: hsl(140.4, 100%, 50%);
+  --color-sample-40: hsl(144, 100%, 50%);
+  --color-sample-41: hsl(147.6, 100%, 50%);
+  --color-sample-42: hsl(151.2, 100%, 50%);
+  --color-sample-43: hsl(154.8, 100%, 50%);
+  --color-sample-44: hsl(158.4, 100%, 50%);
+  --color-sample-45: hsl(162, 100%, 50%);
+  --color-sample-46: hsl(165.6, 100%, 50%);
+  --color-sample-47: hsl(169.2, 100%, 50%);
+  --color-sample-48: hsl(172.8, 100%, 50%);
+  --color-sample-49: hsl(176.4, 100%, 50%);
+  --color-sample-50: hsl(180, 100%, 50%);
+  --color-sample-51: hsl(183.6, 100%, 50%);
+  --color-sample-52: hsl(187.2, 100%, 50%);
+  --color-sample-53: hsl(190.8, 100%, 50%);
+  --color-sample-54: hsl(194.4, 100%, 50%);
+  --color-sample-55: hsl(198, 100%, 50%);
+  --color-sample-56: hsl(201.6, 100%, 50%);
+  --color-sample-57: hsl(205.2, 100%, 50%);
+  --color-sample-58: hsl(208.8, 100%, 50%);
+  --color-sample-59: hsl(212.4, 100%, 50%);
+  --color-sample-60: hsl(216, 100%, 50%);
+  --color-sample-61: hsl(219.6, 100%, 50%);
+  --color-sample-62: hsl(223.2, 100%, 50%);
+  --color-sample-63: hsl(226.8, 100%, 50%);
+  --color-sample-64: hsl(230.4, 100%, 50%);
+  --color-sample-65: hsl(234, 100%, 50%);
+  --color-sample-66: hsl(237.6, 100%, 50%);
+  --color-sample-67: hsl(241.2, 100%, 50%);
+  --color-sample-68: hsl(244.8, 100%, 50%);
+  --color-sample-69: hsl(248.4, 100%, 50%);
+  --color-sample-70: hsl(252, 100%, 50%);
+  --color-sample-71: hsl(255.6, 100%, 50%);
+  --color-sample-72: hsl(259.2, 100%, 50%);
+  --color-sample-73: hsl(262.8, 100%, 50%);
+  --color-sample-74: hsl(266.4, 100%, 50%);
+  --color-sample-75: hsl(270, 100%, 50%);
+  --color-sample-76: hsl(273.6, 100%, 50%);
+  --color-sample-77: hsl(277.2, 100%, 50%);
+  --color-sample-78: hsl(280.8, 100%, 50%);
+  --color-sample-79: hsl(284.4, 100%, 50%);
+  --color-sample-80: hsl(288, 100%, 50%);
+  --color-sample-81: hsl(291.6, 100%, 50%);
+  --color-sample-82: hsl(295.2, 100%, 50%);
+  --color-sample-83: hsl(298.8, 100%, 50%);
+  --color-sample-84: hsl(302.4, 100%, 50%);
+  --color-sample-85: hsl(306, 100%, 50%);
+  --color-sample-86: hsl(309.6, 100%, 50%);
+  --color-sample-87: hsl(313.2, 100%, 50%);
+  --color-sample-88: hsl(316.8, 100%, 50%);
+  --color-sample-89: hsl(320.4, 100%, 50%);
+  --color-sample-90: hsl(324, 100%, 50%);
+  --color-sample-91: hsl(327.6, 100%, 50%);
+  --color-sample-92: hsl(331.2, 100%, 50%);
+  --color-sample-93: hsl(334.8, 100%, 50%);
+  --color-sample-94: hsl(338.4, 100%, 50%);
+  --color-sample-95: hsl(342, 100%, 50%);
+  --color-sample-96: hsl(345.6, 100%, 50%);
+  --color-sample-97: hsl(349.2, 100%, 50%);
+  --color-sample-98: hsl(352.8, 100%, 50%);
+  --color-sample-99: hsl(356.4, 100%, 50%);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.swatch {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+ul#items {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div#total {
+  text-align: center;
+  background-color: white;
+  padding: 10px 0 10px 0;
+}
+
+h1 > ticker-tape {
+  text-align: center;
+}
+
+.ticker {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
